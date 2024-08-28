@@ -133,7 +133,7 @@
         }
         /* aside */
         
-        .aside {
+        /* .aside {
             width: 190px;
             background: var(--bg--black--100);
             position: fixed;
@@ -146,11 +146,11 @@
             justify-content: center;
             align-items: center;
             z-index: 10;
-        }
+        }*/
         
         .aside .logo {
             position: absolute;
-            top: 50px;
+            top: 10px;
             font-size: 30px;
             text-transform: capitalize;
         }
@@ -163,7 +163,7 @@
             letter-spacing: 5px;
             position: relative;
         }
-        
+         
         .aside .logo a span {
             font-family: 'Clicker Script', cursive;
             font-size: 40px;
@@ -269,7 +269,7 @@
         
         .home .home-info {
             flex: 0 0 60%;
-            max-width: 60%;
+            max-width: 70%;
         }
         
         h3.hello {
@@ -301,8 +301,8 @@
         }
         
         .home .home-img {
-            flex: 0 0 40%;
-            max-width: 40%;
+            flex: 0 0 100%;
+            max-width: 35%;
             text-align: center;
             position: relative;
         }
@@ -312,10 +312,10 @@
             position: absolute;
             height: 80px;
             width: 80px;
-            border-bottom: 10px solid var(--skin-color);
-            border-right: 10px solid var(--skin-color);
-            right: 30px;
-            bottom: -40px;
+            border-bottom: 5px solid var(--skin-color);
+            border-right: 5px solid var(--skin-color);
+            right: 0px;
+            bottom: 0px;
         }
         
         .home-img::before {
@@ -323,10 +323,10 @@
             position: absolute;
             height: 80px;
             width: 80px;
-            border-top: 10px solid var(--skin-color);
-            border-left: 10px solid var(--skin-color);
-            left: 30px;
-            top: -40px;
+            border-top: 5px solid var(--skin-color);
+            border-left: 5px solid var(--skin-color);
+            left: 0px;
+            top: 0px;
         }
         
         .home .home-img img {
@@ -718,6 +718,7 @@
             height: 50px;
             padding: 0 50px;
         }
+
         
         @media screen {
             .main-content {
@@ -747,3 +748,208 @@
                 max-width: 100%;
             }
         }
+
+/* body {
+    
+    margin: 0;
+    padding: 0;
+} */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.main-container {
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+.aside {
+    width: calc(100% - 50px); /* Header will take up 50% of the screen width minus 50px */
+    height: 70px; /* Adjust height for your header */
+    position: fixed; /* Fixes the header at the top */
+    top: 0;
+    left: 50%; /* Start at the middle of the screen */
+    transform: translateX(-50%); /* Shift it left by 50% of its own width to center */
+    background-color: #ffffff;
+    color: #000000;
+    padding: 10px 20px;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Centers the nav content */
+    z-index: 1000;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.logo {
+    position: absolute; /* Position the logo absolutely */
+    left: 10px; /* Place the logo at the leftmost side */
+}
+
+.logo a {
+    text-decoration: none;
+    font-size: 24px;
+    color: #ecf0f1;
+    font-weight: bold;
+}
+
+.logo span {
+    background-color: #e74c3c;
+    color: #fff;
+    padding: 5px 10px;
+    margin-right: 10px;
+    border-radius: 50%;
+}
+
+.nav-toggler {
+    display: none; /* Hide toggle button for now */
+}
+
+.nav {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+
+.nav li {
+    margin-left: 20px;
+}
+
+.nav li a {
+    text-decoration: none;
+    color: #ecf0f1;
+    font-size: 18px;
+    transition: all 0.3s ease;
+}
+
+.nav li a.active, .nav li a:hover {
+    color: #e74c3c;
+}
+
+.nav li a i {
+    margin-right: 5px;
+}
+
+
+
+
+/*homeeee updated*/
+.home {
+    padding: 60px 0;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center; /* Align items vertically if needed */
+}
+
+.home-info, .home-img {
+    flex: 1 1 100%; /* Makes both sections flexible */
+    padding: 15px;
+}
+
+.home-img img {
+    width: 100%; /* Makes the image responsive */
+    height: auto; /* Maintains aspect ratio */
+    display: block; /* Removes extra bottom space */
+}
+
+
+
+/* Media Queries */
+
+/* Large screens (1200px and up) */
+@media (min-width: 1200px) {
+    .main-container {
+        max-width: 1200px;
+    }
+    .nav {
+        flex-wrap: nowrap;
+        justify-content: center;
+    }
+    .nav li {
+        margin-right: 20px;
+    }
+    .home-info, .home-img {
+        flex-basis: 50%;
+    }
+    .service-item, .portfolio-item, .contact-info-item {
+        flex-basis: 30%;
+    }
+}
+
+/* Medium screens (992px to 1199px) */
+@media (min-width: 992px) and (max-width: 1199px) {
+    .main-container {
+        max-width: 992px;
+    }
+    .nav {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .nav li {
+        margin-right: 10px;
+    }
+    .home-info, .home-img {
+        flex-basis: 60%;
+    }
+    .service-item, .portfolio-item, .contact-info-item {
+        flex-basis: 40%;
+    }
+}
+
+/* Small screens (768px to 991px) */
+@media (min-width: 768px) and (max-width: 991px) {
+    .main-container {
+        max-width: 768px;
+    }
+    .nav-toggler {
+        display: block;
+    }
+    .nav {
+        display: none;
+    }
+    .home-info, .home-img {
+        flex-basis: 100%;
+    }
+    .service-item, .portfolio-item, .contact-info-item {
+        flex-basis: 50%;
+    }
+}
+
+/* Extra small screens (up to 767px) */
+@media (max-width: 767px) {
+    .main-container {
+        max-width: 100%;
+    }
+    .nav-toggler {
+        display: block;
+    }
+    .nav {
+        display: none;
+    }
+    .home-info, .home-img {
+        flex-basis: 100%;
+    }
+    .service-item, .portfolio-item, .contact-info-item {
+        flex-basis: 100%;
+    }
+}
+/* Responsive adjustments */
+@media (min-width: 768px) {
+    .home-info, .home-img {
+        flex: 1 1 50%; /* 50% width for larger screens */
+    }
+}
